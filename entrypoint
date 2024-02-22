@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Start NGINX in the foreground
+exec nginx -g 'daemon off;'

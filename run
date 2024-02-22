@@ -1,0 +1,10 @@
+#!/bin/bash
+
+./dev
+
+trap '' SIGINT
+
+# trap ctrl-c so that it doesn't stop the container launched in ./dev
+./login
+trap - SIGINT  # reset the trap to default behavior
+docker-compose down >/dev/null 2>&1 &  # shut down the container in the background.
